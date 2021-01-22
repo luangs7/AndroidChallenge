@@ -1,0 +1,14 @@
+android {
+    flavorDimensions "api"
+    productFlavors {
+        mock {
+            buildConfigField "Boolean", "IS_MOCK", "true"
+            dimension "api"
+        }
+        prod {
+            buildConfigField "Boolean", "IS_MOCK", "false"
+            dimension "api"
+        }
+
+    }
+}
