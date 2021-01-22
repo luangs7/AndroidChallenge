@@ -1,7 +1,8 @@
-package com.luan.emojilist
+package com.luan.emojilist.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.luan.emojilist.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

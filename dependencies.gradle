@@ -20,7 +20,7 @@ ext {
                             coreKTX          : "1.2.0-alpha03",
                             constrainLayout  : "2.0.0-beta4",
                             vectorDrawable   : "1.1.0-rc01",
-                            room             : "2.2.0-alpha02",
+                            room             : "2.2.6",
                             legacySupport    : "1.0.0",
                             databinding      : "3.4.0",
                             paging           : "2.1.0",
@@ -74,7 +74,10 @@ ext {
             retrofitLogging     : "com.squareup.okhttp3:logging-interceptor:${versions.retrofitLogging}",
             glide               : "com.github.bumptech.glide:glide:${versions.glide}",
             glideTransformations: "jp.wasabeef:glide-transformations:${versions.glideTransformations}",
-            exifinterface       : "androidx.exifinterface:exifinterface:${versions.exifinterface}"
+            exifinterface       : "androidx.exifinterface:exifinterface:${versions.exifinterface}",
+            room                : "androidx.room:room-runtime:${versions.androidx.room}",
+            roomCompiler        : "androidx.room:room-compiler:${versions.androidx.room}",
+            roomCoroutines      : "androidx.room:room-ktx:${versions.androidx.room}",
     ]
 
     annotationProcessors = [
