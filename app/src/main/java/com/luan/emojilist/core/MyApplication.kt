@@ -2,7 +2,7 @@ package com.luan.emojilist.core
 
 import android.app.Application
 import com.luan.common.di.NetworkModule
-import com.luan.emojilist.dependency.databaseModule
+import com.luan.emojilist.dependency.emojiDatabaseModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -17,7 +17,7 @@ class MyApplication : Application() {
             modules(
                 listOf(
                     NetworkModule.dependencyModule,
-                    databaseModule
+                    emojiDatabaseModule
                 )
             )
         }

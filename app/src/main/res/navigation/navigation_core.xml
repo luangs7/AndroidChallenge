@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/home"
+    android:id="@+id/navigation_core">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.luan.emojilist.presentation.fragments.EmojiHomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="GitEmojiHome">
+
+        <action
+            android:id="@+id/action_home_to_list"
+            app:destination="@id/list" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/list"
+        android:name="com.luan.emojilist.presentation.fragments.EmojiListFragment"
+        tools:layout="@layout/fragment_emoji_list"
+        android:label="GitEmojiList">
+
+    </fragment>
+
+</navigation>

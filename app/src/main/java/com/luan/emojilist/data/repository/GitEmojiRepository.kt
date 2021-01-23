@@ -1,7 +1,7 @@
 package com.luan.emojilist.data.repository
 
 import com.luan.common.base.Resource
-import com.luan.emojilist.domain.model.Emoji
+import com.luan.common.domain.Emoji
 import kotlinx.coroutines.flow.Flow
 
 interface GitEmojiRepository {

@@ -2,4 +2,5 @@
     <string name="app_name">Emoji List</string>
     <string name="random_emoji">Random emoji</string>
     <string name="emoji_list">Emoji list</string>
+    <string name="emoji_get">Get Emoji</string>
 </resources>
