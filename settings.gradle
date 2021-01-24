@@ -1,3 +1,5 @@
+include ':avatarlist'
+include ':avatars'
 include ':navigation'
 include ':emojilist'
 include ':common'
