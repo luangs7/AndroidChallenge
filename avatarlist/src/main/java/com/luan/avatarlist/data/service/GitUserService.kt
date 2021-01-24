@@ -7,7 +7,7 @@ import retrofit2.http.Path
 
 interface GitUserService {
 
-    @GET("user/{query}")
+    @GET("users/{query}")
     suspend fun getUser(@Path("query") query:String):Response<GitUser>
 
 }

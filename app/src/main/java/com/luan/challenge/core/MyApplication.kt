@@ -1,6 +1,7 @@
 package com.luan.challenge.core
 
 import android.app.Application
+import com.luan.avatarlist.dependency.avatarDatabaseModule
 import com.luan.common.di.NetworkModule
 import com.luan.emojilist.dependency.emojiDatabaseModule
 import org.koin.android.ext.koin.androidContext
@@ -17,7 +18,8 @@ class MyApplication : Application() {
             modules(
                 listOf(
                     NetworkModule.dependencyModule,
-                    emojiDatabaseModule
+                    emojiDatabaseModule,
+                    avatarDatabaseModule
                 )
             )
         }

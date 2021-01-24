@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import com.luan.common.helper.SingleLiveEvent
 
-fun <T> LiveData<T>.toSingleEvent(): SingleLiveEvent<T> {
+fun <T> LiveData<T>.toSingleEvent(): LiveData<T> {
     val result = SingleLiveEvent<T>()
     result.addSource(this) {
         result.value = it

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">avatarlist</string>
+    <string name="avatar_list">Avatar List</string>
+    <string name="google_list">Google List</string>
+    <string name="not_found">Usuário não encontrado!</string>
+    <string name="gituser_stored">User salvo. Você pode visualiza-lo na lista de avatares.</string>
+    <string name="error_generic">Houve um erro.</string>
+    <string name="user_removed">User deletado.</string>
 </resources>

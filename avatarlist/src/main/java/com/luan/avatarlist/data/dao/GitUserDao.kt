@@ -1,21 +1,23 @@
 package com.luan.avatarlist.data.dao
 
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.luan.avatarlist.domain.model.GitUser
 import com.luan.common.domain.Emoji
 import kotlinx.coroutines.flow.Flow
 
+@Dao
 interface GitUserDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveUser(user:GitUser)
+     fun saveUser(user:GitUser)
 
-    @Query("SELECT * FROM gituser WHERE login = :_login")
-    suspend fun getUser( _login:String ):Flow<GitUser?>
+    @Query("SELECT * FROM gituser WHERE login = :login")
+     fun getUser(login:String):GitUser?
 
     @Query("SELECT * FROM gituser")
-    suspend fun getListUser():Flow<List<GitUser>>
+     fun getListUser():Flow<List<GitUser>>
+
+    @Query("DELETE FROM gituser WHERE id = :id")
+    fun deleteUser(id:Int)
 
 }
