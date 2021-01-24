@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.luan.common.base.BaseFragment
 import com.luan.common.base.Resource
 import com.luan.common.extension.handleLoading
@@ -14,6 +15,7 @@ import com.luan.emojilist.R
 import com.luan.emojilist.databinding.FragmentEmojiHomeBinding
 import com.luan.emojilist.databinding.FragmentEmojiListBinding
 import com.luan.emojilist.presentation.EmojiListViewModel
+import kotlinx.android.synthetic.main.fragment_emoji_home.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class EmojiHomeFragment : BaseFragment() {
@@ -39,7 +41,7 @@ class EmojiHomeFragment : BaseFragment() {
         setupObserver()
         mainViewModel.getRandomEmoji()
 
-//        btnListEmoji.setOnClickListener { findNavController().navigate(EmojiHomeFragmentDirections.actionHomeToList()) }
+        binding.btnListEmoji.setOnClickListener { findNavController().navigate(EmojiHomeFragmentDirections.actionHomeToList()) }
     }
 
     private fun setupObserver(){

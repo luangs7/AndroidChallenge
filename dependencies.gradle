@@ -87,6 +87,7 @@ ext {
     modulesDependencies = [
             common       : project(":common"),
             emojilist    : project(":emojilist"),
-            navigation   : project(":navigation")
+            navigation   : project(":navigation"),
+            avatarlist   : project(":avatarlist")
     ]
 }

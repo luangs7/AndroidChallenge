@@ -22,4 +22,21 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/avatarHome"
+        android:name="com.luan.avatarlist.presentation.fragments.GitUserHomeFragment"
+        android:label="GitUserHome">
+
+        <action
+            android:id="@+id/action_avatarHome_to_avatarList"
+            app:destination="@id/avatarList" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/avatarList"
+        android:name="com.luan.avatarlist.presentation.fragments.GitAvatarListFragment"
+        android:label="GitUserHome">
+
+    </fragment>
+
 </navigation>

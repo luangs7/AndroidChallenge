@@ -10,7 +10,7 @@
             android:checked="true"
             android:title="Emojis" />
         <item
-            android:id="@+id/list"
+            android:id="@+id/avatarHome"
             android:title="Avatares" />
     </group>
 </menu>
