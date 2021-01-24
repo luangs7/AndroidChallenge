@@ -24,7 +24,10 @@ class GitUserRepositoryImpl(
             it?.let { emit(Resource.cache(it)) } ?: kotlin.run {
                 val response = service.getUser(login)
                 if (response.isSuccessful) {
-                    emit(Resource.success(response.body()))
+                    response.body()?.let { user ->
+                        dao.saveUser(user)
+                        emit(Resource.success(user))
+                    } ?: emit(Resource.error(InvalidParameterException()))
                 } else {
                     emit(Resource.error(Exception(response.errorBody().toString())))
                 }
