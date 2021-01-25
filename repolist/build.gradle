@@ -7,7 +7,8 @@ apply from: "$rootDir/app/base-build.gradle"
 
 
 dependencies {
-    api libDependencies.values()
-    kapt annotationProcessors.values()
-   
+    implementation modulesDependencies.common
+    api modulesDependencies.navigation
+    implementation libDependencies.paging
+    kapt libDependencies.roomCompiler
 }

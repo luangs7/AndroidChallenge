@@ -1,3 +1,4 @@
+include ':repolist'
 include ':avatarlist'
 include ':avatars'
 include ':navigation'
