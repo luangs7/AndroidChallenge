@@ -13,7 +13,7 @@ apply from: "base-build.gradle"
 
 android {
     defaultConfig {
-        applicationId "com.luan.emojilist"
+        applicationId "com.luan.challenge"
     }
 }
 
@@ -21,8 +21,4 @@ dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     api modulesDependencies.common
     implementation modulesDependencies.values()
-    kapt libDependencies.roomCompiler
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 }

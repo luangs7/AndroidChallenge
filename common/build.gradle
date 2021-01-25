@@ -8,8 +8,6 @@ apply from: "$rootDir/app/base-build.gradle"
 
 dependencies {
     api libDependencies.values()
-    api "androidx.databinding:databinding-common:4.0.0"
-
     kapt annotationProcessors.values()
    
 }
