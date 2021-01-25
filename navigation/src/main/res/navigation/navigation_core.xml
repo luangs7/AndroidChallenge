@@ -30,12 +30,22 @@
         <action
             android:id="@+id/action_avatarHome_to_avatarList"
             app:destination="@id/avatarList" />
+        <action
+            android:id="@+id/action_avatarHome_to_repoList"
+            app:destination="@id/repoList" />
     </fragment>
 
     <fragment
         android:id="@+id/avatarList"
         android:name="com.luan.avatarlist.presentation.fragments.GitAvatarListFragment"
         android:label="GitUserHome">
+
+    </fragment>
+
+ <fragment
+        android:id="@+id/repoList"
+        android:name="com.luan.repolist.presentation.RepoListFragment"
+        android:label="GoogleRepoList">
 
     </fragment>
 

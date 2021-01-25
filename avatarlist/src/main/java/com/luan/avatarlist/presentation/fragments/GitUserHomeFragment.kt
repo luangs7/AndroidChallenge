@@ -46,6 +46,7 @@ class GitUserHomeFragment : BaseFragment() {
     private fun setupView(){
         binding.apply {
             btnList.setOnClickListener { findNavController().navigate(GitUserHomeFragmentDirections.actionAvatarHomeToAvatarList()) }
+            btnRepo.setOnClickListener { findNavController().navigate(GitUserHomeFragmentDirections.actionAvatarHomeToRepoList()) }
         }
     }
 
