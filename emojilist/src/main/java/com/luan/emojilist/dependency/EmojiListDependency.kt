@@ -34,8 +34,9 @@ val emojiDatabaseModule = module {
 
     single { provideDatabase(androidApplication()) }
     single { provideCountriesDao(get()) }
+}
 
-
+val emojiDependency = module {
     single<GetListEmojiUseCase> {
         GetListEmojiUseCaseImpl(
             get()
@@ -52,6 +53,7 @@ val emojiDatabaseModule = module {
             get()
         )
     }
+
     factory<GitEmojiService> { resolveRetrofit() ?: GitEmojiServiceMock() }
     viewModel { EmojiListViewModel(get(),get()) }
 }

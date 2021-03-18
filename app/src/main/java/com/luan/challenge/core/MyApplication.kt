@@ -4,6 +4,7 @@ import android.app.Application
 import com.luan.avatarlist.dependency.avatarDatabaseModule
 import com.luan.common.di.NetworkModule
 import com.luan.emojilist.dependency.emojiDatabaseModule
+import com.luan.emojilist.dependency.emojiDependency
 import com.luan.repolist.dependency.repolistModule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.ext.koin.androidContext
@@ -22,6 +23,7 @@ class MyApplication : Application() {
                 listOf(
                     NetworkModule.dependencyModule,
                     emojiDatabaseModule,
+                    emojiDependency,
                     avatarDatabaseModule,
                     repolistModule
                 )
