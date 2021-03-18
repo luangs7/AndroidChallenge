@@ -3,7 +3,6 @@
 
 ## :desktop_computer: Tecnologias
 
-**Libs**
  - Koin
  - Glide
  - Coroutines
