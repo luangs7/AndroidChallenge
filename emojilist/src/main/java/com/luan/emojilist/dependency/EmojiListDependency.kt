@@ -1,6 +1,7 @@
 package com.luan.emojilist.dependency
 
 import android.app.Application
+import android.content.Context
 import androidx.room.Room
 import com.luan.common.extension.resolveRetrofit
 import com.luan.emojilist.data.dao.GitEmojiDao
@@ -16,13 +17,14 @@ import com.luan.emojilist.domain.GetRandomEmojiUseCaseImpl
 import com.luan.emojilist.presentation.EmojiListViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.koin.android.ext.koin.androidApplication
+import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 @ExperimentalCoroutinesApi
 val emojiDatabaseModule = module {
 
-    fun provideDatabase(application: Application): GitEmojiDatabase {
+    fun provideDatabase(application: Context): GitEmojiDatabase {
         return Room.databaseBuilder(application, GitEmojiDatabase::class.java, "emoji")
             .fallbackToDestructiveMigration()
             .build()
@@ -32,7 +34,7 @@ val emojiDatabaseModule = module {
         return  database.emojiDao
     }
 
-    single { provideDatabase(androidApplication()) }
+    single { provideDatabase(androidContext()) }
     single { provideCountriesDao(get()) }
 }
 

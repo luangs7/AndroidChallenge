@@ -111,6 +111,7 @@ ext {
             mockito         : "org.mockito:mockito-core:${versions.test.mockito}",
             mockitoKotlin   : "com.nhaarman.mockitokotlin2:mockito-kotlin:${versions.test.mockitoKotlin}",
             koinTest        : "org.koin:koin-test:${versions.koin}",
-            coreTesting     : "androidx.arch.core:core-testing:${versions.test.coreTesting}"
+            coreTesting     : "androidx.arch.core:core-testing:${versions.test.coreTesting}",
+            coroutinesTest  : "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions.kotlinX.coroutines}",
     ]
 }
