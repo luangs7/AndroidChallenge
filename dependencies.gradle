@@ -40,7 +40,20 @@ ext {
                             crashlytics   : "2.10.1"
                     ],
 
-            exifinterface       : "1.0.0"
+            exifinterface       : "1.0.0",
+            test                :
+                    [
+                            junit                   : "4.12",
+                            mockito                 : "3.0.0",
+                            androidxRunner          : "1.2.0-alpha03",
+                            androidxEspresso        : "3.1.1",
+                            androidxCore            : "1.2.0-alpha03",
+                            livedataTesting         : "1.1.0",
+                            mockitoKotlin           : "2.0.0",
+                            coreTesting             : "2.0.1",
+                            hierachicalContextRunner: "4.12.1",
+                            junitExt                : "1.1.1"
+                    ]
     ]
 
     buildDependencies = [
@@ -90,5 +103,15 @@ ext {
             navigation   : project(":navigation"),
             avatarlist   : project(":avatarlist"),
             repolist     : project(":repolist")
+    ]
+
+    testDependencies = [
+            junit           : "junit:junit:${versions.test.junit}",
+            livedataTesting : "com.jraska.livedata:testing-ktx:${versions.test.livedataTesting}",
+            mockito         : "org.mockito:mockito-core:${versions.test.mockito}",
+            mockitoKotlin   : "com.nhaarman.mockitokotlin2:mockito-kotlin:${versions.test.mockitoKotlin}",
+            koinTest        : "org.koin:koin-test:${versions.koin}",
+            coreTesting     : "androidx.arch.core:core-testing:${versions.test.coreTesting}",
+            coroutinesTest  : "org.jetbrains.kotlinx:kotlinx-coroutines-test:${versions.kotlinX.coroutines}",
     ]
 }

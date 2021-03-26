@@ -4,9 +4,11 @@ import com.luan.common.base.Resource
 import com.luan.emojilist.data.dao.GitEmojiDao
 import com.luan.emojilist.data.service.GitEmojiService
 import com.luan.common.domain.Emoji
+import com.luan.common.helper.getException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*
+import java.lang.Exception
 
 @ExperimentalCoroutinesApi
 class GitEmojiRepositoryImpl(
@@ -24,6 +26,8 @@ class GitEmojiRepositoryImpl(
                         dao.saveEmojiList(it)
                         emit(Resource.success(it))
                     }
+                }else{
+                    emit(Resource.error(remoteList.getException()))
                 }
             }else{
                 emit(Resource.cache(list))
