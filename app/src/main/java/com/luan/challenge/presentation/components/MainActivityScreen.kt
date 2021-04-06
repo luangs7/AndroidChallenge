@@ -16,7 +16,9 @@ import com.luan.navigation.BottomNavigationScreens
 
 @PreviewParameter(provider = BottomNavigationFakeItemsProvider::class)
 @Composable
-fun HomeContentView(items: List<BottomNavigationScreens>) {
+fun HomeContentView(
+    items: List<BottomNavigationScreens>,
+    onNavigationIconClicked: () -> Unit) {
     val navController = rememberNavController()
     val isHome = remember { mutableStateOf<Boolean>(true) }
 
@@ -26,11 +28,12 @@ fun HomeContentView(items: List<BottomNavigationScreens>) {
         topBar = {
             Toolbar(
                 title = "Android Challenge",
-                navigationIcon = if (isHome.value.not()) {
+                navigationIcon = if (isHome.value) {
                     null
                 } else {
                     Icons.Filled.ArrowBack
                 },
+                onNavigationIconClicked = onNavigationIconClicked
             )
         },
         bottomBar = { BottomNavigationView(navController = navController, items = items) },

@@ -39,7 +39,9 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun Content() {
         AppTheme {
-            HomeContentView(items = BottomNavigationFakeItemsProvider().values.toList())
+            HomeContentView(
+                items = BottomNavigationFakeItemsProvider().values.toList(),
+                onNavigationIconClicked = { this@MainActivity.onBackPressed() })
         }
     }
 }

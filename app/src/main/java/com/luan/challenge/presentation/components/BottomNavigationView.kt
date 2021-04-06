@@ -7,6 +7,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.*
 import com.luan.emojilist.presentation.ui.EmojiHomeScreen
+import com.luan.emojilist.presentation.ui.EmojiListScreen
 import com.luan.navigation.AVATAR_HOME
 import com.luan.navigation.BottomNavigationScreens
 import com.luan.navigation.EMOJI_HOME
@@ -58,9 +59,7 @@ fun BottomScreenNavigationRoute(navController: NavHostController){
         }
 
         composable(InternalNavigationScreens.EmojiListPage.route){
-            Box {
-               Text(text = "Hello World")
-            }
+            EmojiListScreen()
         }
     }
 }
