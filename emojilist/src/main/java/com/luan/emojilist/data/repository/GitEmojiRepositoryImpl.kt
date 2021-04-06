@@ -27,7 +27,7 @@ class GitEmojiRepositoryImpl(
                         emit(Resource.success(it))
                     }
                 }else{
-                    emit(Resource.error(remoteList.getException()))
+                    emit(Resource.error<List<Emoji>>(remoteList.getException()))
                 }
             }else{
                 emit(Resource.cache(list))

@@ -21,7 +21,7 @@ class GitReposRepositoryImpl(private val service: GitRepositoryService) : GitRep
         if (response.isSuccessful) {
             emit(Resource.success(response.body()))
         } else {
-            emit(Resource.error(Exception(response.errorBody().toString())))
+            emit(Resource.error<List<Repository>>(Exception(response.errorBody().toString())))
         }
 
     }.flowOn(Dispatchers.Default)

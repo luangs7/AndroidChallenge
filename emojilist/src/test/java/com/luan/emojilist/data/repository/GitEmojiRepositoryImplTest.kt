@@ -43,7 +43,7 @@ class GitEmojiRepositoryImplTest : AutoCloseKoinTest() {
     @Test
     fun getListFromService() {
         runBlocking {
-            whenMock(dao.getList()).thenReturn(flow { emit(emptyList()) })
+            whenMock(dao.getList()).thenReturn(flow { emit(emptyList<Emoji>()) })
             whenMock(service.getEmojiList()).thenReturn(DataHelper.responseListSuccess)
             val data = repository.getListEmoji().take(2).toList()
 
@@ -68,7 +68,7 @@ class GitEmojiRepositoryImplTest : AutoCloseKoinTest() {
     @Test
     fun getListFromServerFail() {
         runBlocking {
-            whenMock(dao.getList()).thenReturn(flow { emit(emptyList()) })
+            whenMock(dao.getList()).thenReturn(flow { emit(emptyList<Emoji>()) })
             whenMock(service.getEmojiList()).thenReturn( DataHelper.responseFail )
             val data = repository.getListEmoji().take(2).toList()
 

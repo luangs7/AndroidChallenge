@@ -37,13 +37,13 @@ class GitUserRepositoryImpl(
                     response.body()?.let { user ->
                         dao.saveUser(user)
                         emit(Resource.success(user))
-                    } ?: emit(Resource.error(InvalidParameterException()))
+                    } ?: emit(Resource.error<GitUser>(InvalidParameterException()))
                 } else {
                     val exception =
                         if (response.isNotFound()) GitUserUseCase.GitUserNotFoundException()
                         else Exception(response.errorBody().toString())
 
-                    emit(Resource.error(exception))
+                    emit(Resource.error<GitUser>(exception))
                 }
             }
         }

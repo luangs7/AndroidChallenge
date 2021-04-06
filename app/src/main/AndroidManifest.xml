@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:name="com.luan.challenge.core.MyApplication"
-        android:theme="@style/Theme.EmojiList">
+        android:theme="@style/AppTheme">
         <activity android:name="com.luan.challenge.presentation.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

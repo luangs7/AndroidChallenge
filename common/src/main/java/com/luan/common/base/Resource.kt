@@ -3,7 +3,7 @@ package com.luan.common.base
 class Resource<T> private constructor(val status: Status, val data: T? = null, val exception: Throwable? = null) {
 
     enum class Status {
-        SUCCESS, CACHE, ERROR, LOADING
+        SUCCESS, CACHE, ERROR, LOADING, EMPTY
     }
     companion object {
         fun <T> success(data: T?): Resource<T> {
@@ -24,6 +24,10 @@ class Resource<T> private constructor(val status: Status, val data: T? = null, v
                 Status.LOADING,
                 data
             )
+        }
+
+        fun <T> empty(): Resource<T> {
+            return Resource(Status.EMPTY)
         }
     }
 
