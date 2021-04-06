@@ -40,11 +40,11 @@ fun EmojiListScreen() {
             }
         }
     }
-
 }
 
 @Composable
 fun EmojiListContent(
+    isLoading: Boolean = false,
     viewModel: EmojiListViewModel,
     listOfEmoji: List<Emoji>?
 ) {
@@ -55,7 +55,7 @@ fun EmojiListContent(
     }
 
     SwipeToRefreshLayout(
-        refreshingState = false,
+        refreshingState = isLoading,
         onRefresh = { viewModel.getList() },
         refreshIndicator = {
             Surface(elevation = 10.dp, shape = CircleShape) {
