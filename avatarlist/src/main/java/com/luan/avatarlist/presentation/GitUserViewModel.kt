@@ -58,4 +58,9 @@ class GitUserViewModel(
             }
         }
     }
+
+    fun setQueryValue(value:String){
+        mutableQueryValue.value = value
+        getUser()
+    }
 }

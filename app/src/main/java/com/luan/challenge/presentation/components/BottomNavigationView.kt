@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.*
+import com.luan.avatarlist.presentation.ui.GitAvatarHomeScreen
 import com.luan.emojilist.presentation.ui.EmojiHomeScreen
 import com.luan.emojilist.presentation.ui.EmojiListScreen
 import com.luan.navigation.AVATAR_HOME
@@ -55,7 +56,7 @@ fun BottomScreenNavigationRoute(navController: NavHostController){
         }
 
         composable(BottomNavigationScreens.AvatarPage.route){
-            //TODO: Chamar tela avatar
+            GitAvatarHomeScreen()
         }
 
         composable(InternalNavigationScreens.EmojiListPage.route){

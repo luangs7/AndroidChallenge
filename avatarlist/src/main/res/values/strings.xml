@@ -6,4 +6,5 @@
     <string name="gituser_stored">User salvo. Você pode visualiza-lo na lista de avatares.</string>
     <string name="error_generic">Houve um erro.</string>
     <string name="user_removed">User deletado.</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
