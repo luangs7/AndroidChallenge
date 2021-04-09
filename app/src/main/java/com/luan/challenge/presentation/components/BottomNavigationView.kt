@@ -7,12 +7,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.*
 import com.luan.avatarlist.presentation.ui.GitAvatarHomeScreen
+import com.luan.avatarlist.presentation.ui.GitAvatarListScreen
 import com.luan.emojilist.presentation.ui.EmojiHomeScreen
 import com.luan.emojilist.presentation.ui.EmojiListScreen
 import com.luan.navigation.AVATAR_HOME
 import com.luan.navigation.BottomNavigationScreens
 import com.luan.navigation.EMOJI_HOME
 import com.luan.navigation.InternalNavigationScreens
+import com.luan.repolist.presentation.RepoListScreen
 
 
 @Composable
@@ -55,12 +57,27 @@ fun BottomScreenNavigationRoute(navController: NavHostController){
             )
         }
 
-        composable(BottomNavigationScreens.AvatarPage.route){
-            GitAvatarHomeScreen()
+        composable(BottomNavigationScreens.AvatarPage.route) {
+            GitAvatarHomeScreen(
+                onAvatarList = {
+                    navController.navigate(InternalNavigationScreens.AvatarListPage.route)
+                },
+                onRepoList = {
+                    navController.navigate(InternalNavigationScreens.RepoListPage.route)
+                }
+            )
         }
 
-        composable(InternalNavigationScreens.EmojiListPage.route){
+        composable(InternalNavigationScreens.EmojiListPage.route) {
             EmojiListScreen()
+        }
+
+        composable(InternalNavigationScreens.AvatarListPage.route) {
+            GitAvatarListScreen()
+        }
+
+        composable(InternalNavigationScreens.RepoListPage.route) {
+            RepoListScreen()
         }
     }
 }

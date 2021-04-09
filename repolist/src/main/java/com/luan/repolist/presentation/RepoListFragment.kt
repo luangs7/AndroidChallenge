@@ -61,8 +61,7 @@ class RepoListFragment: BaseFragment() {
     private fun setupObservers(){
         viewModel.getRepositoryResponse.observe(viewLifecycleOwner, Observer {
             when(it.status){
-                Resource.Status.SUCCESS,
-                Resource.Status.CACHE -> it.data?.let { items-> adapter.items = items.toMutableList() }
+                Resource.Status.SUCCESS-> it.data?.let { items-> adapter.items = items.toMutableList() }
                 else ->  {}
             }
         })

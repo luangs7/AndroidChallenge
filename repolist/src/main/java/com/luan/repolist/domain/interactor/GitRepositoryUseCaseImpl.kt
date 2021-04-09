@@ -1,7 +1,6 @@
 package com.luan.repolist.domain.interactor
 
 import com.luan.common.base.Resource
-import com.luan.common.interactor.UseCase
 import com.luan.repolist.data.repository.GitReposRepository
 import com.luan.repolist.domain.model.Repository
 import kotlinx.coroutines.flow.Flow

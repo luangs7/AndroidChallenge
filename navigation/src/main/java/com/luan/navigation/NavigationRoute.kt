@@ -9,6 +9,8 @@ import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 const val EMOJI_HOME = "home"
 const val AVATAR_HOME = "avatarHome"
 const val EMOJI_LIST = "emojiList"
+const val AVATAR_LIST = "avatarList"
+const val REPO_LIST = "repoList"
 
 class BottomNavigationFakeItemsProvider: PreviewParameterProvider<BottomNavigationScreens> {
     override val values = sequenceOf(BottomNavigationScreens.HomePage,BottomNavigationScreens.AvatarPage)
@@ -25,9 +27,8 @@ sealed class BottomNavigationScreens(
 }
 
 sealed class InternalNavigationScreens(
-    val route: String,
-    val parentRoute: String
-    ) {
-    object EmojiListPage : InternalNavigationScreens(route= EMOJI_LIST, parentRoute = EMOJI_HOME)
-    object AvatarPage : InternalNavigationScreens(route= AVATAR_HOME, parentRoute = EMOJI_HOME)
+    val route: String) {
+    object EmojiListPage : InternalNavigationScreens(route= EMOJI_LIST)
+    object AvatarListPage : InternalNavigationScreens(route= AVATAR_LIST)
+    object RepoListPage : InternalNavigationScreens(route= REPO_LIST)
 }

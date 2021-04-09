@@ -13,13 +13,23 @@ class GitRepositoryServiceMock : GitRepositoryService {
         page: Int,
         limit: Int
     ): Response<List<Repository>> {
-        delay(2000)
+        delay(4000)
         return Response.success(
             listOf(
+                Repository(
+                    "google/android_kotlin",
+                    Random.nextInt(),
+                    false
+                ),
                 Repository(
                     "google/challenge_android_kotlin",
                     Random.nextInt(),
                     false
+                ),
+                Repository(
+                    "google/desafio_android_kotlin",
+                    Random.nextInt(),
+                    true
                 )
             )
         )

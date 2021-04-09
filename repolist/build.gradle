@@ -10,5 +10,6 @@ dependencies {
     implementation modulesDependencies.common
     api modulesDependencies.navigation
     implementation libDependencies.paging
+    implementation libDependencies.constrainCompose
     kapt libDependencies.roomCompiler
 }

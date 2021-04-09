@@ -46,7 +46,7 @@ fun EmojiHomeContent(emojiViewModel: EmojiListViewModel, onNextScreen: () -> Uni
                 EmojiHomeSuccessEmptyState(imageSource = url,
                     hasListStored = hasListState,
                     onButton1Clicked = {
-                        emojiViewModel.getRandomEmoji()
+                        emojiViewModel.onEmojiClick()
                     },
                     onNextScreen = onNextScreen)
             }

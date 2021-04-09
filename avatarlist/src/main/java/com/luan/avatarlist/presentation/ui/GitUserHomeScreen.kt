@@ -28,17 +28,16 @@ import com.luan.common.extension.observer
 import com.luan.common.helper.getViewModel
 
 
-@Preview
 @Composable
-fun GitAvatarHomeScreen() {
+fun GitAvatarHomeScreen(onAvatarList: () -> Unit, onRepoList: () -> Unit) {
     Surface(color = MaterialTheme.colors.background) {
-        GitAvatarHomeContent()
+        GitAvatarHomeContent(onAvatarList, onRepoList)
     }
 }
 
 
 @Composable
-fun GitAvatarHomeContent() {
+fun GitAvatarHomeContent(onAvatarList: () -> Unit, onRepoList: () -> Unit) {
     val viewModel = getViewModel<GitUserViewModel>()
     val loading = remember { mutableStateOf(false) }
     val userSaved = remember { mutableStateOf<GitUser?>(null) }
@@ -54,7 +53,6 @@ fun GitAvatarHomeContent() {
     }
 
     userState.observer(
-        onCache = { onSuccessAction.invoke(it) },
         onSuccess = { onSuccessAction.invoke(it) },
         onEveryState = {
             loading.value = it == Resource.Status.LOADING
@@ -71,12 +69,12 @@ fun GitAvatarHomeContent() {
             ButtonView(
                 label = stringResource(id = R.string.avatar_list)
             ) {
-
+                onAvatarList.invoke()
             }
             ButtonView(
                 label = stringResource(id = R.string.google_list)
             ) {
-
+                onRepoList.invoke()
             }
         }
         if (loading.value) {

@@ -51,6 +51,7 @@ fun EmojiListContent(
 
     val list = remember { mutableStateListOf<Emoji>() }
     listOfEmoji?.let {
+        list.clear()
         list.addAll(it)
     }
 
